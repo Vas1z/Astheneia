@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ch02dp64mei74" path="res://- Classic 64 Asset Pack 0.6/Windows/Materials/window_modern_06.jpg" id="3_o1325"]
 [ext_resource type="Texture2D" uid="uid://c1tj8rnk2sl2n" path="res://- Classic 64 Asset Pack 0.6/Windows/Materials/window_modern_06_light.png" id="4_10qhy"]
 [ext_resource type="Texture2D" uid="uid://blf1uir5jajqq" path="res://- Classic 64 Asset Pack 0.6/Roof/Materials/shingles_old_01.jpg" id="5_vy7fe"]
+[ext_resource type="PackedScene" uid="uid://jvjx5fdljyv2" path="res://trash.tscn" id="7_2y50f"]
+[ext_resource type="PackedScene" uid="uid://d2j7lae7jmj6" path="res://bench.tscn" id="8_obbqb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1325"]
 albedo_texture = ExtResource("1_metfq")
@@ -4017,3 +4019,12 @@ mesh = SubResource("PlaneMesh_riqys")
 transform = Transform3D(4.371139e-08, 3.821371e-15, 1, 8.742278e-08, -1, 0, 1, 8.742278e-08, -4.371139e-08, 38.53846, 30, -5.3076935)
 material_override = SubResource("StandardMaterial3D_obbqb")
 mesh = SubResource("PlaneMesh_riqys")
+
+[node name="trash" parent="." unique_id=2017214325 instance=ExtResource("7_2y50f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1400776, -2.3454456, 4.652913)
+
+[node name="bench2" parent="." unique_id=1724851144 instance=ExtResource("8_obbqb")]
+transform = Transform3D(-6.360007e-08, 0, -1.455, 0, 1.455, 0, 1.455, 0, -6.360007e-08, -2.2750723, -1.5401938, 0.60207415)
+
+[node name="bench3" parent="." unique_id=556063153 instance=ExtResource("8_obbqb")]
+transform = Transform3D(-1.455, 0, 1.2720014e-07, 0, 1.455, 0, -1.2720014e-07, 0, -1.455, 7.138998, -1.5401938, 2.4331236)

@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bq1stj2mujnp2" path="res://PlayerCharacter/StateMachine/wallrun_state_script.gd" id="12_5fuve"]
 [ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://PlayerCharacter/HUD/label_settings.tres" id="14_gfbru"]
 [ext_resource type="Shader" uid="uid://b34228uop3gdf" path="res://PlayerCharacter/Shaders/speed_lines_shader.gdshader" id="14_jv0i6"]
-[ext_resource type="Texture2D" uid="uid://dsx45s3ibic" path="res://- Classic 64 Asset Pack 0.6/Wood/Materials/wood_fancy_03.jpg" id="14_rxw30"]
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://PlayerCharacter/HUD/hud_script.gd" id="16_5jm78"]
 [ext_resource type="Texture2D" uid="uid://dv747ov6fcrsg" path="res://PlayerCharacter/HUD/crosshair.png" id="16_gfbru"]
 [ext_resource type="StyleBox" uid="uid://c50syhy1a4dmh" path="res://PlayerCharacter/HUD/player_character_hud_theme.tres" id="18_ovq28"]
@@ -29,12 +28,6 @@ point_count = 2
 _limits = [3.0, 30.0, 0.0, 30.0]
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(30, 30), 0.0, 0.0, 0, 0]
 point_count = 2
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_bhunq"]
-height = 1.3925781
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ner60"]
-albedo_texture = ExtResource("14_rxw30")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yjma"]
 
@@ -143,15 +136,6 @@ exclude_parent = false
 target_position = Vector3(-1, 0, 0)
 collision_mask = 4
 debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraHolder/Camera" unique_id=1092435618]
-transform = Transform3D(0.0049635842, 0.09262182, 0.08793299, 0.08693332, -0.11646854, 3.799977e-09, 0.022758732, 0.4246837, -0.019177832, 0.3005164, -0.29725102, -0.6797312)
-mesh = SubResource("CylinderMesh_bhunq")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="CameraHolder/Camera/MeshInstance3D" unique_id=201842982]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.34999996, 0, 0, 0, 0.99999994, 0, 0.93693316, 0)
-material_override = SubResource("StandardMaterial3D_ner60")
-mesh = SubResource("CylinderMesh_bhunq")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=795912197]
 shape = SubResource("CapsuleShape3D_5yjma")

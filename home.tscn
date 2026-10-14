@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bab3d2p1me38s"]
+[gd_scene format=3 uid="uid://d0oc0pxn76e11"]
 
 [ext_resource type="Texture2D" uid="uid://hpypldixtmdi" path="res://- Classic 64 Asset Pack 0.6/Walls/Materials/siding_tan_01.jpg" id="1_w1mvj"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="2_o1ld7"]

@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://ub0sho5qij8f"]
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="1_ulcgi"]
+[ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://PlayerCharacter/HUD/label_settings.tres" id="3_73fnb"]
 [ext_resource type="Shader" uid="uid://b6fbv588wtitr" path="res://addons/psx_shader/shaders/psx_screen.gdshader" id="3_3253y"]
 [ext_resource type="PackedScene" uid="uid://bk0t4c664wq4r" path="res://ground.tscn" id="6_ni31j"]
 [ext_resource type="PackedScene" uid="uid://ewxu06af4p0x" path="res://street_lamp.tscn" id="7_ni31j"]
 [ext_resource type="PackedScene" uid="uid://2no57ld1djpi" path="res://house.tscn" id="7_xlvrw"]
 [ext_resource type="PackedScene" uid="uid://b6pdopopn67i6" path="res://snow.tscn" id="8_73fnb"]
 [ext_resource type="PackedScene" uid="uid://b34m1uyu1qviu" path="res://fans.tscn" id="8_xlvrw"]
-[ext_resource type="PackedScene" uid="uid://jvjx5fdljyv2" path="res://trash.tscn" id="9_5juve"]
-[ext_resource type="PackedScene" uid="uid://d2j7lae7jmj6" path="res://bench.tscn" id="9_73fnb"]
 [ext_resource type="PackedScene" uid="uid://b6nnea1elvqli" path="res://door.tscn" id="10_5juve"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2354"]
@@ -40,7 +39,7 @@ section_length = 0.05
 [node name="scene" type="Node3D" unique_id=1916239934]
 
 [node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6287543, 2.7266612, 1.2140703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6287543, 0.65274024, 14.974125)
 collision_layer = 1
 crouch_speed = 0.0
 crouch_accel = 0.0
@@ -59,6 +58,18 @@ offset_bottom = 40.0
 scale = Vector2(49.2, 27.56)
 mouse_filter = 2
 
+[node name="open_door_ntf" type="Label" parent="CanvasLayer" unique_id=134421307]
+texture_filter = 1
+offset_left = 882.0
+offset_top = 573.0
+offset_right = 953.0
+offset_bottom = 586.0
+scale = Vector2(2.2, 2.2)
+theme_override_font_sizes/font_size = 40
+text = "Open door : E"
+label_settings = ExtResource("3_73fnb")
+vertical_alignment = 1
+
 [node name="ground" parent="." unique_id=131997789 instance=ExtResource("6_ni31j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
@@ -75,7 +86,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.09
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0912886, -1, -11.247826)
 
 [node name="house" parent="." unique_id=32828068 instance=ExtResource("7_xlvrw")]
-transform = Transform3D(-2.9214942e-08, 0, 0.99999994, 0, 0.65472007, 0, -0.66835994, 0, -4.3711385e-08, -5.9471617, 0.7000004, -7.4240746)
+transform = Transform3D(-3.4750553e-08, 0, 0.795, 0, 0.795, 0, -0.795, 0, -3.4750553e-08, -5.9471617, 1.11176, -7.4240746)
 
 [node name="house2" parent="." unique_id=743414445 instance=ExtResource("7_xlvrw")]
 transform = Transform3D(-2.9214938e-08, 0, -0.99999994, 0, 0.65472007, 0, 0.66835994, 0, -4.3711385e-08, 26.052837, 0.7000004, -7.4240746)
@@ -152,12 +163,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.111115, 0, 9.536743e-07)
 [node name="fans12" parent="fans/fans13" unique_id=286495237 instance=ExtResource("8_xlvrw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.22223, 0, 9.536743e-07)
 
-[node name="bench" parent="." unique_id=1724851144 instance=ExtResource("9_73fnb")]
-transform = Transform3D(1.06, 0, 0, 0, 1.06, 0, 0, 0, 1.06, -5.5282774, -0.29726788, -6.084251)
-
-[node name="bench2" parent="." unique_id=1464303903 instance=ExtResource("9_73fnb")]
-transform = Transform3D(-4.633407e-08, 0, -1.06, 0, 1.06, 0, 1.06, 0, -4.633407e-08, -3.5282774, -0.29726788, -12.084251)
-
 [node name="snow" parent="." unique_id=556150199 instance=ExtResource("8_73fnb")]
 transform = Transform3D(2.125, 0, 0, 0, 2.125, 0, 0, 0, 2.125, -5.208679, -0.4653566, -0.70036244)
 
@@ -212,8 +217,5 @@ amount = 3000
 process_material = SubResource("ParticleProcessMaterial_bhunq")
 draw_pass_1 = SubResource("RibbonTrailMesh_xlvrw")
 
-[node name="trash" parent="." unique_id=2017214325 instance=ExtResource("9_5juve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7351997, -1.0187149, -3.183355)
-
 [node name="door" parent="." unique_id=1745778143 instance=ExtResource("10_5juve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9429584, -1.9700003, -8.188591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9429584, -1.4835522, -8.412422)
