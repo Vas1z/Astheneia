@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://brkoaidmxhj3r"]
+
+[ext_resource type="Shader" uid="uid://144r0lj7nquo" path="res://addons/psx_shader/shaders/psx.gdshader" id="1_k2pgi"]
+[ext_resource type="Texture2D" uid="uid://ch1ek1vlvxr7e" path="res://kenney fantasy/floor_stone.png" id="2_18taw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_k2pgi")
+shader_parameter/albedo_tex = ExtResource("2_18taw")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/vertex_color_mix = 1.0
+shader_parameter/texture_filter = 1
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scroll = Vector2(0, 0)
+shader_parameter/affine = 1.0
+shader_parameter/affine_limit = 0.35
+shader_parameter/pixel_size = 3.0
+shader_parameter/snap_strength = 1.0
+shader_parameter/jitter = 0.0
+shader_parameter/jitter_rate = 12.0
+shader_parameter/lit = 1.0
+shader_parameter/glow = 0.0
+shader_parameter/emission_strength = 1.0
+shader_parameter/matcap_amount = 0.0
+shader_parameter/billboard = 0
+shader_parameter/fog_amount = 0.0
+shader_parameter/fog_color = Color(0.05, 0.06, 0.08, 1)
+shader_parameter/fog_start = 8.0
+shader_parameter/fog_end = 30.0
+shader_parameter/color_bits = 5
+shader_parameter/dither_amount = 1.0
+shader_parameter/cutout = 0.0

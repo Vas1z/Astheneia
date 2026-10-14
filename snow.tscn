@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b6pdopopn67i6"]
+
+[ext_resource type="Texture2D" uid="uid://ck3aumo628svv" path="res://- Classic 64 Asset Pack 0.6/Ground/Materials/ice_04.jpg" id="1_nqr5d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooc8r"]
+albedo_texture = ExtResource("1_nqr5d")
+
+[sub_resource type="SphereMesh" id="SphereMesh_riqys"]
+
+[node name="snow" type="Node3D" unique_id=556150199]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1857909771]
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1546442350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3356256, 0.48831916)
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2118919537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24981797, -0.3356256, -0.1535722)
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1160097875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24981797, -0.3356256, -0.5907326)
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1271195171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1069293, -0.1453079, -0.5907326)
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=564115002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1069293, -0.41161895, -1.0850197)
+material_override = SubResource("StandardMaterial3D_ooc8r")
+mesh = SubResource("SphereMesh_riqys")

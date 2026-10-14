@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b34m1uyu1qviu"]
+
+[ext_resource type="Texture2D" uid="uid://cm8mj8380bygw" path="res://- Classic 64 Asset Pack 0.6/Metal/Materials/metal_army_tank_01.png" id="1_vdfwd"]
+[ext_resource type="Texture2D" uid="uid://6anw18cc7wmx" path="res://- Classic 64 Asset Pack 0.6/Metal/Materials/metal_bar_01.png" id="2_yt2es"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exiwk"]
+albedo_texture = ExtResource("1_vdfwd")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bhunq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpgx3"]
+albedo_texture = ExtResource("2_yt2es")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(3.1000001, 0.3, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(3, 5.1328125, 0.3421748)
+
+[node name="fans" type="Node3D" unique_id=1727077964]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=218565316]
+transform = Transform3D(0.34999996, 0, 0, 0, 2, 0, 0, 0, 0.34999996, 0, -0.8, 0)
+material_override = SubResource("StandardMaterial3D_exiwk")
+mesh = SubResource("CylinderMesh_bhunq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1977572358]
+transform = Transform3D(0.34999996, 0, 0, 0, 2, 0, 0, 0, 0.34999996, 1, -0.8, 0)
+material_override = SubResource("StandardMaterial3D_exiwk")
+mesh = SubResource("CylinderMesh_bhunq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=483079459]
+transform = Transform3D(0.34999996, 0, 0, 0, 2, 0, 0, 0, 0.34999996, -1, -0.8, 0)
+material_override = SubResource("StandardMaterial3D_exiwk")
+mesh = SubResource("CylinderMesh_bhunq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1451692430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05000007, 1.15, -2.9802322e-08)
+material_override = SubResource("StandardMaterial3D_jpgx3")
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=750688101]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=685392587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8, 0, 2.0664063, 0.16648889)
+shape = SubResource("BoxShape3D_bhunq")

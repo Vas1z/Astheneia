@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://ub0sho5qij8f"]
+
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="1_ulcgi"]
+[ext_resource type="Shader" uid="uid://b6fbv588wtitr" path="res://addons/psx_shader/shaders/psx_screen.gdshader" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://bk0t4c664wq4r" path="res://ground.tscn" id="6_ni31j"]
+[ext_resource type="PackedScene" uid="uid://ewxu06af4p0x" path="res://street_lamp.tscn" id="7_ni31j"]
+[ext_resource type="PackedScene" uid="uid://2no57ld1djpi" path="res://house.tscn" id="7_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://b6pdopopn67i6" path="res://snow.tscn" id="8_73fnb"]
+[ext_resource type="PackedScene" uid="uid://b34m1uyu1qviu" path="res://fans.tscn" id="8_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://jvjx5fdljyv2" path="res://trash.tscn" id="9_5juve"]
+[ext_resource type="PackedScene" uid="uid://d2j7lae7jmj6" path="res://bench.tscn" id="9_73fnb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2354"]
+shader = ExtResource("3_3253y")
+shader_parameter/grayscale = 0.11999999731776
+shader_parameter/screen_amount = 1.0
+shader_parameter/screen_pixel_size = 4.5
+shader_parameter/screen_color_bits = 5
+shader_parameter/screen_dither = 1.0
+shader_parameter/grain = 0.03999999910592
+shader_parameter/vignette = 0.28999999351792
+
+[sub_resource type="Environment" id="Environment_bhunq"]
+background_mode = 1
+background_color = Color(0.17712036, 8.892156e-06, 0.1539849, 1)
+background_energy_multiplier = 0.84
+ambient_light_energy = 1.29
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bhunq"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, -4.045, 0)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_xlvrw"]
+size = 0.1
+sections = 2
+section_length = 0.05
+
+[node name="scene" type="Node3D" unique_id=1916239934]
+
+[node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6287543, 2.7266612, 1.2140703)
+crouch_speed = 0.0
+crouch_accel = 0.0
+crouch_deccel = 0.0
+continious_crouch = true
+backward_crouch_speed_multiplier = 0.0
+crouch_hitbox_height = 0.0
+crouch_model_height = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=938895374]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=461512152]
+material = SubResource("ShaderMaterial_y2354")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(49.2, 27.56)
+mouse_filter = 2
+
+[node name="ground" parent="." unique_id=131997789 instance=ExtResource("6_ni31j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=18706365]
+environment = SubResource("Environment_bhunq")
+
+[node name="StaticBody3D2" parent="." unique_id=989284901 instance=ExtResource("7_ni31j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0912886, -1, 7.7521744)
+
+[node name="StaticBody3D3" parent="." unique_id=826507650 instance=ExtResource("7_ni31j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0912886, -1, -1.2478256)
+
+[node name="StaticBody3D4" parent="." unique_id=1882266675 instance=ExtResource("7_ni31j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0912886, -1, -11.247826)
+
+[node name="house" parent="." unique_id=32828068 instance=ExtResource("7_xlvrw")]
+transform = Transform3D(-2.9214942e-08, 0, 0.99999994, 0, 0.65472007, 0, -0.66835994, 0, -4.3711385e-08, -5.9471617, 0.7000004, -7.4240746)
+
+[node name="house2" parent="." unique_id=743414445 instance=ExtResource("7_xlvrw")]
+transform = Transform3D(-2.9214938e-08, 0, -0.99999994, 0, 0.65472007, 0, 0.66835994, 0, -4.3711385e-08, 26.052837, 0.7000004, -7.4240746)
+
+[node name="fans" parent="." unique_id=1727077964 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 3.2452207, -0.08217275, 6.8131895)
+
+[node name="fans2" parent="fans" unique_id=653707934 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1111116, 0, 0)
+
+[node name="fans3" parent="fans" unique_id=1260635901 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.222223, 0, 0)
+
+[node name="fans4" parent="fans" unique_id=660805031 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.333335, 0, 0)
+
+[node name="fans5" parent="fans" unique_id=1352500675 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.444447, 0, 0)
+
+[node name="fans6" parent="fans" unique_id=763442558 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.555557, 0, 0)
+
+[node name="fans7" parent="fans" unique_id=1503441637 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.666668, 0, 0)
+
+[node name="fans8" parent="fans" unique_id=991372843 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.777779, 0, 9.536743e-07)
+
+[node name="fans9" parent="fans" unique_id=244547155 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.888891, 0, 9.536743e-07)
+
+[node name="fans10" parent="fans" unique_id=1263852550 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.000002, 0, 9.536743e-07)
+
+[node name="fans11" parent="fans" unique_id=1173000045 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.111115, 0, 9.536743e-07)
+
+[node name="fans12" parent="fans" unique_id=1827096613 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.22223, 0, 9.536743e-07)
+
+[node name="fans13" parent="fans" unique_id=268142833 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.333336, 0, 9.536743e-07)
+
+[node name="fans2" parent="fans/fans13" unique_id=1042759292 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1111116, 0, 0)
+
+[node name="fans3" parent="fans/fans13" unique_id=351727578 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.222223, 0, 0)
+
+[node name="fans4" parent="fans/fans13" unique_id=1620381360 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.333335, 0, 0)
+
+[node name="fans5" parent="fans/fans13" unique_id=1373231070 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.444447, 0, 0)
+
+[node name="fans6" parent="fans/fans13" unique_id=33175806 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.555557, 0, 0)
+
+[node name="fans7" parent="fans/fans13" unique_id=560074381 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.666668, 0, 0)
+
+[node name="fans8" parent="fans/fans13" unique_id=977319130 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.777779, 0, 9.536743e-07)
+
+[node name="fans9" parent="fans/fans13" unique_id=1866509821 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.888891, 0, 9.536743e-07)
+
+[node name="fans10" parent="fans/fans13" unique_id=837361085 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.000002, 0, 9.536743e-07)
+
+[node name="fans11" parent="fans/fans13" unique_id=563682481 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.111115, 0, 9.536743e-07)
+
+[node name="fans12" parent="fans/fans13" unique_id=286495237 instance=ExtResource("8_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.22223, 0, 9.536743e-07)
+
+[node name="bench" parent="." unique_id=1724851144 instance=ExtResource("9_73fnb")]
+transform = Transform3D(1.06, 0, 0, 0, 1.06, 0, 0, 0, 1.06, -5.5282774, -0.29726788, -6.084251)
+
+[node name="bench2" parent="." unique_id=1464303903 instance=ExtResource("9_73fnb")]
+transform = Transform3D(-4.633407e-08, 0, -1.06, 0, 1.06, 0, 1.06, 0, -4.633407e-08, -3.5282774, -0.29726788, -12.084251)
+
+[node name="snow" parent="." unique_id=556150199 instance=ExtResource("8_73fnb")]
+transform = Transform3D(2.125, 0, 0, 0, 2.125, 0, 0, 0, 2.125, -5.208679, -0.4653566, -0.70036244)
+
+[node name="snow3" parent="snow" unique_id=571655059 instance=ExtResource("8_73fnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8235297)
+
+[node name="snow2" parent="snow" unique_id=26047528 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 1.4117647)
+
+[node name="snow4" parent="snow" unique_id=1759644051 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 4.2352943)
+
+[node name="snow5" parent="snow" unique_id=651406858 instance=ExtResource("8_73fnb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.7058825, 0.13776869, 3.7647061)
+
+[node name="snow3" parent="snow/snow5" unique_id=998597965 instance=ExtResource("8_73fnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8235297)
+
+[node name="snow2" parent="snow/snow5" unique_id=1646529454 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 1.4117647)
+
+[node name="snow4" parent="snow/snow5" unique_id=59868403 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.061910152, 0.13699757, 4.2349873)
+
+[node name="snow6" parent="snow" unique_id=608096336 instance=ExtResource("8_73fnb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.7058825, 0, -2.352941)
+
+[node name="snow3" parent="snow/snow6" unique_id=930248634 instance=ExtResource("8_73fnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8235297)
+
+[node name="snow2" parent="snow/snow6" unique_id=1739040064 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, -0.161464, 1.4117651)
+
+[node name="snow4" parent="snow/snow6" unique_id=1173703823 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 4.2352943)
+
+[node name="snow7" parent="snow" unique_id=1375934444 instance=ExtResource("8_73fnb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.7058825, 0, -7.5294123)
+
+[node name="snow3" parent="snow/snow7" unique_id=1390145779 instance=ExtResource("8_73fnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8235297)
+
+[node name="snow2" parent="snow/snow7" unique_id=214066819 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 1.4117647)
+
+[node name="snow4" parent="snow/snow7" unique_id=39153873 instance=ExtResource("8_73fnb")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.06191063, 0, 4.2352943)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=649577589]
+transform = Transform3D(22.755802, 0, 0, 0, 15.876464, 0, 0, 0, 28.397713, 4.401865, 13.198231, 0)
+amount = 3000
+process_material = SubResource("ParticleProcessMaterial_bhunq")
+draw_pass_1 = SubResource("RibbonTrailMesh_xlvrw")
+
+[node name="trash" parent="." unique_id=2017214325 instance=ExtResource("9_5juve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7351997, -1.0187149, -3.183355)

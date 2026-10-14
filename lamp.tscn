@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1plp83w88b55"]
+
+[ext_resource type="Material" uid="uid://brkoaidmxhj3r" path="res://shaders/materials/psx_material_lamp.tres" id="1_uno5e"]
+[ext_resource type="Material" uid="uid://dfh7m5q2makyq" path="res://shaders/materials/psx_material_plastic.tres" id="2_vxcd3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_riqys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+
+[node name="lamp" type="StaticBody3D" unique_id=1984398173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2033624988]
+transform = Transform3D(0.7, 0, 0, 0, 0.21, 0, 0, 0, 0.7, 0, 0.22838777, 0)
+material_override = ExtResource("1_uno5e")
+mesh = SubResource("CylinderMesh_riqys")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1735741560]
+transform = Transform3D(0.2, 0, 0, 0, 0.21, 0, 0, 0, 0.2, 0, -0.16626072, 0)
+material_override = ExtResource("2_vxcd3")
+mesh = SubResource("CylinderMesh_riqys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=843284417]
+shape = SubResource("BoxShape3D_bhunq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=33447204]

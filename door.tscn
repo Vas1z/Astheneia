@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b6nnea1elvqli"]
+
+[ext_resource type="Script" uid="uid://c8bufley7yvjc" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://brgvti4ralul7" path="res://- Classic 64 Asset Pack 0.6/Doors/Materials/door_double_brown_right.png" id="2_0phs7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50cdl"]
+albedo_texture = ExtResource("2_0phs7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y5njw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(1, 6.1121826, 2.5995483)
+
+[node name="door" type="Node3D" unique_id=1745778143]
+script = ExtResource("1_v6xrn")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1275182692]
+transform = Transform3D(-4.3711385e-08, 0.99999994, -1.10589795e-07, 0, -4.371138e-08, -2.5299997, -0.99999994, -4.3711385e-08, -4.154332e-15, 0, 2.5, 0)
+material_override = SubResource("StandardMaterial3D_50cdl")
+mesh = SubResource("PlaneMesh_y5njw")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=66925004]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=585763295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5560913, -0.075286865)
+shape = SubResource("BoxShape3D_bhunq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

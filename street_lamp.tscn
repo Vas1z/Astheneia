@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ewxu06af4p0x"]
+
+[ext_resource type="Material" uid="uid://brkoaidmxhj3r" path="res://shaders/materials/psx_material_lamp.tres" id="1_o2psh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_riqys"]
+height = 3.375
+
+[sub_resource type="PrismMesh" id="PrismMesh_bhunq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(0.7, 0.1, 0.6)
+
+[node name="steet_lamp" type="StaticBody3D" unique_id=989284901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2126176008]
+shape = SubResource("BoxShape3D_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2098508548]
+transform = Transform3D(0.3, 0, 0, 0, 2.3000002, 0, 0, 0, 0.3, 0, 3.5812502, 0)
+material_override = ExtResource("1_o2psh")
+mesh = SubResource("CylinderMesh_riqys")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1453744959]
+transform = Transform3D(2.7, 0, 0, 0, 0.54999995, 0, 0, 0, 1, 1, 7.702176, 0)
+material_override = ExtResource("1_o2psh")
+mesh = SubResource("PrismMesh_bhunq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1957443201]
+transform = Transform3D(2.7, 0, 0, 0, 1, 0, 0, 0, 1, 1.135, 7.3521757, -5.9604645e-08)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=933980517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9946673, 7.012143, 0)
+light_color = Color(1, 0.70980394, 0.30588236, 1)
+light_energy = 16.0
+omni_range = 9.29839
