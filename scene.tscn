@@ -4,10 +4,10 @@
 [ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://PlayerCharacter/HUD/label_settings.tres" id="3_73fnb"]
 [ext_resource type="Shader" uid="uid://b6fbv588wtitr" path="res://addons/psx_shader/shaders/psx_screen.gdshader" id="3_3253y"]
 [ext_resource type="PackedScene" uid="uid://bk0t4c664wq4r" path="res://ground.tscn" id="6_ni31j"]
-[ext_resource type="PackedScene" uid="uid://ewxu06af4p0x" path="res://street_lamp.tscn" id="7_ni31j"]
+[ext_resource type="PackedScene" uid="uid://ewxu06af4p0x" path="res://gd_models/street_lamp.tscn" id="7_ni31j"]
 [ext_resource type="PackedScene" uid="uid://2no57ld1djpi" path="res://house.tscn" id="7_xlvrw"]
 [ext_resource type="PackedScene" uid="uid://b6pdopopn67i6" path="res://snow.tscn" id="8_73fnb"]
-[ext_resource type="PackedScene" uid="uid://b34m1uyu1qviu" path="res://fans.tscn" id="8_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://b34m1uyu1qviu" path="res://gd_models/fans.tscn" id="8_xlvrw"]
 [ext_resource type="PackedScene" uid="uid://b6nnea1elvqli" path="res://door.tscn" id="10_5juve"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2354"]
@@ -218,4 +218,4 @@ process_material = SubResource("ParticleProcessMaterial_bhunq")
 draw_pass_1 = SubResource("RibbonTrailMesh_xlvrw")
 
 [node name="door" parent="." unique_id=1745778143 instance=ExtResource("10_5juve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9429584, -1.4835522, -8.412422)
+transform = Transform3D(1, 0, 0, 0, 0.7757024, 0, 0, 0, 0.8633778, -5.9429584, -1.0557959, -8.18021)
