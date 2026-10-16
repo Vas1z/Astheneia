@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bdxspkwa8npo"]
+
+[ext_resource type="PackedScene" uid="uid://bk0t4c664wq4r" path="res://ground.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="2_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://cibq7ff6skyiw" path="res://resources/Characters_psx_1.2/Characters_psx_02/Models/No-Rig/Male/Character_01.fbx" id="3_6uqi0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
+size = Vector3(3, 4, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="Node3D" type="Node3D" unique_id=727954464]
+
+[node name="ground" parent="." unique_id=131997789 instance=ExtResource("1_8uh7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.723911, 0, -0.0697155)
+
+[node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("2_6uqi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1975489, 1, 3.5613692)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=629986121]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1199055897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -8.316425)
+shape = SubResource("BoxShape3D_riqys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1194811719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.316425)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="Character_01" parent="." unique_id=97436299 instance=ExtResource("3_6uqi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053269863, -0.8380353, -6.42348)

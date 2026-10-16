@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b6pdopopn67i6" path="res://snow.tscn" id="8_73fnb"]
 [ext_resource type="PackedScene" uid="uid://b34m1uyu1qviu" path="res://gd_models/fans.tscn" id="8_xlvrw"]
 [ext_resource type="PackedScene" uid="uid://b6nnea1elvqli" path="res://door.tscn" id="10_5juve"]
+[ext_resource type="Script" uid="uid://bqswotlj5cv38" path="res://resources/Characters_psx_1.2/Characters_psx_02/Models/No-Rig/Male/character_15.gd" id="11_5c1cw"]
+[ext_resource type="PackedScene" uid="uid://ddteve0r8dm0d" path="res://resources/Characters_psx_1.2/Characters_psx_02/Models/No-Rig/Male/Character_15.fbx" id="11_fy5k1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2354"]
 shader = ExtResource("3_3253y")
@@ -22,7 +24,7 @@ shader_parameter/vignette = 0.28999999351792
 
 [sub_resource type="Environment" id="Environment_bhunq"]
 background_mode = 1
-background_color = Color(0.17712036, 8.892156e-06, 0.1539849, 1)
+background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.84
 ambient_light_energy = 1.29
 
@@ -36,18 +38,14 @@ size = 0.1
 sections = 2
 section_length = 0.05
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bhunq"]
+height = 2.7060547
+radius = 0.80810547
+
 [node name="scene" type="Node3D" unique_id=1916239934]
 
 [node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("1_ulcgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6287543, 0.65274024, 14.974125)
-collision_layer = 1
-crouch_speed = 0.0
-crouch_accel = 0.0
-crouch_deccel = 0.0
-continious_crouch = true
-backward_crouch_speed_multiplier = 0.0
-crouch_hitbox_height = 0.0
-crouch_model_height = 0.0
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4955442, 1.9079032, -2.170138)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=938895374]
 
@@ -68,6 +66,19 @@ scale = Vector2(2.2, 2.2)
 theme_override_font_sizes/font_size = 40
 text = "Open door : E"
 label_settings = ExtResource("3_73fnb")
+vertical_alignment = 1
+
+[node name="talk_ntf" type="Label" parent="CanvasLayer" unique_id=1578359059]
+texture_filter = 1
+offset_left = 882.0
+offset_top = 573.0
+offset_right = 953.0
+offset_bottom = 586.0
+scale = Vector2(2.2, 2.2)
+theme_override_font_sizes/font_size = 40
+text = "Talk : E"
+label_settings = ExtResource("3_73fnb")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ground" parent="." unique_id=131997789 instance=ExtResource("6_ni31j")]
@@ -218,4 +229,17 @@ process_material = SubResource("ParticleProcessMaterial_bhunq")
 draw_pass_1 = SubResource("RibbonTrailMesh_xlvrw")
 
 [node name="door" parent="." unique_id=1745778143 instance=ExtResource("10_5juve")]
-transform = Transform3D(1, 0, 0, 0, 0.7757024, 0, 0, 0, 0.8633778, -5.9429584, -1.0557959, -8.18021)
+transform = Transform3D(1, 0, 0, 0, 0.7757024, 0, 0, 0, 0.8633778, -5.798811, -1.0557959, -8.18021)
+
+[node name="Character_15" parent="." unique_id=1500467507 instance=ExtResource("11_fy5k1")]
+transform = Transform3D(-7.562072e-08, 5.465783e-15, -1.73, -0.40928474, -1.6808884, 1.7890407e-08, -1.6808884, 0.40928474, 7.347398e-08, -2.252491, 2.648571, -3.1433558)
+script = ExtResource("11_5c1cw")
+
+[node name="Area3D" type="Area3D" parent="Character_15" unique_id=1929819229]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character_15/Area3D" unique_id=1871544565]
+transform = Transform3D(1, 0, -1.4210855e-14, 0, 1, 0, 1.4210855e-14, 0, 1, 0, 0.35302734, 0)
+shape = SubResource("CylinderShape3D_bhunq")
+
+[connection signal="body_entered" from="Character_15/Area3D" to="Character_15" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Character_15/Area3D" to="Character_15" method="_on_area_3d_body_exited"]
