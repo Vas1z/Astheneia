@@ -29,7 +29,9 @@ _limits = [3.0, 30.0, 0.0, 30.0]
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(30, 30), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yjma"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a8uvg"]
+radius = 0.5131836
+height = 2.0130615
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bkys"]
 albedo_color = Color(0.196078, 0.223529, 1, 1)
@@ -54,7 +56,7 @@ shader_parameter/mask_edge = 0.800000038
 shader_parameter/animation_speed = 20.0
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1631114635 groups=["PlayerCharacter"]]
-collision_layer = 2
+collision_layer = 3
 floor_block_on_wall = false
 floor_max_angle = 1.13446
 floor_snap_length = 0.0
@@ -138,7 +140,8 @@ collision_mask = 4
 debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=795912197]
-shape = SubResource("CapsuleShape3D_5yjma")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0021972656, 0)
+shape = SubResource("CapsuleShape3D_a8uvg")
 
 [node name="Model" type="MeshInstance3D" parent="." unique_id=1234627634]
 layers = 2

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="h"
+config/name="Astheneia"
 run/main_scene="res://scene.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 

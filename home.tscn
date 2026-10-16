@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d0oc0pxn76e11"]
 
-[ext_resource type="Texture2D" uid="uid://cjis6rsrhfpry" path="res://- Classic 64 Asset Pack 0.6/Walls/Materials/siding_tan_01.jpg" id="1_w1mvj"]
+[ext_resource type="Texture2D" uid="uid://cjis6rsrhfpry" path="res://resources/- Classic 64 Asset Pack 0.6/Walls/Materials/siding_tan_01.jpg" id="1_w1mvj"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="2_o1ld7"]
-[ext_resource type="Texture2D" uid="uid://bi1ydylpq0sgx" path="res://- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_blue_01.jpg" id="3_o1ld7"]
+[ext_resource type="Texture2D" uid="uid://bi1ydylpq0sgx" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_blue_01.jpg" id="3_o1ld7"]
 [ext_resource type="Shader" uid="uid://b6fbv588wtitr" path="res://addons/psx_shader/shaders/psx_screen.gdshader" id="4_2ayvv"]
-[ext_resource type="Texture2D" uid="uid://ba3cqjh3288mq" path="res://- Classic 64 Asset Pack 0.6/Windows/Materials/window_modern_12.jpg" id="4_w1mvj"]
+[ext_resource type="Texture2D" uid="uid://ba3cqjh3288mq" path="res://resources/- Classic 64 Asset Pack 0.6/Windows/Materials/window_modern_12.jpg" id="4_w1mvj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
 size = Vector3(17.5, 0.5, 21.7)

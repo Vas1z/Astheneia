@@ -1,32 +1,32 @@
 [gd_scene format=3 uid="uid://jvjx5fdljyv2"]
 
-[ext_resource type="Texture2D" uid="uid://ci2ll3xkbvp1h" path="res://- Classic 64 Asset Pack 0.6/Metal/Materials/metal_diamondplate_01.jpg" id="1_43he1"]
-[ext_resource type="Texture2D" uid="uid://53aoglcmikpj" path="res://- Classic 64 Asset Pack 0.6/Nature/Materials/bark_2.png" id="2_76yqg"]
+[ext_resource type="Texture2D" uid="uid://duhl8nt3v4sfw" path="res://resources/- Classic 64 Asset Pack 0.6/Metal/Materials/metal_diamondplate_01.jpg" id="1_mgmke"]
+[ext_resource type="Texture2D" uid="uid://b62fijlw8adrg" path="res://resources/- Classic 64 Asset Pack 0.6/Nature/Materials/bark_2.png" id="2_5kmi5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
 size = Vector3(1, 2.1738281, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jixxp"]
 albedo_color = Color(0, 0.47843137, 0, 0.3019608)
-albedo_texture = ExtResource("1_43he1")
+albedo_texture = ExtResource("1_mgmke")
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
 size = Vector3(0.1, 2.0004883, 0.8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c82h1"]
 albedo_color = Color(0, 0.47843137, 0, 0.3019608)
-albedo_texture = ExtResource("1_43he1")
+albedo_texture = ExtResource("1_mgmke")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aet8u"]
-albedo_texture = ExtResource("2_76yqg")
+albedo_texture = ExtResource("2_5kmi5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pavn5"]
 albedo_color = Color(0, 0.47843137, 0, 0.3019608)
-albedo_texture = ExtResource("1_43he1")
+albedo_texture = ExtResource("1_mgmke")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twpq8"]
 albedo_color = Color(0, 0.47843137, 0, 0.3019608)
-albedo_texture = ExtResource("1_43he1")
+albedo_texture = ExtResource("1_mgmke")
 
 [node name="trash" type="Node3D" unique_id=2017214325]
 
