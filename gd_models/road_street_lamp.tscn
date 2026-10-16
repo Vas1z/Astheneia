@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://5dteckynf5ej"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bhunq"]
+top_radius = 0.16210938
+bottom_radius = 0.16210938
+height = 11.547241
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(2.8843384, 0.17749023, 0.717041)
+
+[node name="road street lamp" type="Node3D" unique_id=605953410]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=815972847]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.012913835, 5.7736206, -0.0024646162)
+mesh = SubResource("CylinderMesh_bhunq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1168611142]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.00014768913, 11.58794, 0.03009764)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1791795251]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.00014768913, 11.58794, 0.03009764)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=515319806]
+transform = Transform3D(1, 0, 0, 0, -0.57138294, 0.8206836, 0, -0.82068366, -0.5713829, 0, 11.271217, 0.8060403)
+light_color = Color(1, 0.70980394, 0.30588236, 1)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 52.300545
+spot_angle = 78.94591
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=330467234]
+transform = Transform3D(-1, 7.174644e-08, 4.9951883e-08, 0, -0.57138294, 0.8206836, 8.742278e-08, 0.82068366, 0.5713829, 0, 11.271217, -0.99999607)
+light_color = Color(1, 0.70980394, 0.30588236, 1)
+light_energy = 16.0
+spot_range = 52.300545
+spot_angle = 78.94591

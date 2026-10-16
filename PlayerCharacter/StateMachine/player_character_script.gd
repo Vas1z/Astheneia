@@ -200,7 +200,7 @@ func build_default_keybinding() -> void:
 		jump_action : [Key.KEY_AMPERSAND],
 		slide_action : [Key.KEY_AMPERSAND],
 		dash_action : [Key.KEY_AMPERSAND],
-		fly_action : [Key.KEY_AMPERSAND],
+		fly_action : [Key.KEY_1],
 	}
 	
 func input_actions_check() -> void:

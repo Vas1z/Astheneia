@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cefqvmc7oyvsn" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_02.jpg" id="2_t7tip"]
 [ext_resource type="Texture2D" uid="uid://bqdcx0dnbjb5f" path="res://resources/- Classic 64 Asset Pack 0.6/Ground/Materials/ice_04.jpg" id="3_tv015"]
+[ext_resource type="Texture2D" uid="uid://bplvh1gphaafv" path="res://- Classic 64 Asset Pack 0.6/Road/Materials/road_01.png" id="3_wnojy"]
+[ext_resource type="Texture2D" uid="uid://46m4y172tugc" path="res://- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_01.png" id="4_wnojy"]
+[ext_resource type="Texture2D" uid="uid://b12mrjw36j1sh" path="res://- Classic 64 Asset Pack 0.6/Walls/Materials/wall_plaster_pealing.png" id="5_vkp31"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
-size = Vector3(26.69558, 0.001, 46.111816)
+size = Vector3(2.3545089, 0.001, 10.072205)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv015"]
 albedo_texture = ExtResource("2_t7tip")
@@ -15,13 +18,35 @@ albedo_texture = ExtResource("2_t7tip")
 albedo_texture = ExtResource("3_tv015")
 uv1_scale = Vector3(200, 200, 200)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkp31"]
+albedo_texture = ExtResource("3_wnojy")
+uv1_scale = Vector3(2, 50, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_riqys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
+size = Vector3(1, 4.8362427, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4pc4"]
+albedo_texture = ExtResource("4_wnojy")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(1, 1, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eprha"]
+albedo_color = Color(0.5899028, 0.5899029, 0.5899029, 1)
+albedo_texture = ExtResource("5_vkp31")
+uv1_scale = Vector3(236.83, 5.706, 5.535)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eprha"]
+
 [node name="ground" type="Node3D" unique_id=131997789]
 
 [node name="grass2" type="StaticBody3D" parent="." unique_id=1270194467]
 transform = Transform3D(53.16318, 0, 0, 0, 1, 0, 0, 0, 88.085266, -1, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="grass2" unique_id=792486103]
-transform = Transform3D(2.855264, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 8.613557, -0.00049999356, -17.413328)
+transform = Transform3D(2.855264, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.32645026, -0.00049999356, 0.46566847)
 shape = SubResource("BoxShape3D_bhunq")
 
 [node name="MeshInstance3D399" type="MeshInstance3D" parent="." unique_id=296038867]
@@ -33,3 +58,25 @@ mesh = SubResource("PlaneMesh_bhunq")
 transform = Transform3D(170.9148, 0, 0, 0, 1, 0, 0, 0, 407.4405, -17.895508, -1, 63.825195)
 material_override = SubResource("StandardMaterial3D_wnojy")
 mesh = SubResource("PlaneMesh_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=609682399]
+transform = Transform3D(-1.015332e-06, 0, -163.55347, 0, 1, 0, 23.22809, 0, -7.149149e-06, -26.415192, -0.90000004, 392.49524)
+material_override = SubResource("StandardMaterial3D_vkp31")
+mesh = SubResource("PlaneMesh_riqys")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1140118728]
+transform = Transform3D(333.99338, 0, 0, 0, 1, 0, 0, 0, 1, -25.350227, -0.90000004, 369.50452)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=922786388]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999925, 0, 0, 0, 0.9999925, 0, 1.9181209, 0)
+shape = SubResource("BoxShape3D_riqys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=228222908]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99998856, 0, 0, 0, 0.99998856, 0, 0, -0.2999878)
+material_override = SubResource("StandardMaterial3D_d4pc4")
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="tratuar" type="MeshInstance3D" parent="." unique_id=1975332249]
+transform = Transform3D(333.99338, 0, 0, 0, 1, 0, 0, 0, 3.2200003, -25.350227, -0.90000004, 365.3045)
+material_override = SubResource("StandardMaterial3D_eprha")
+mesh = SubResource("PlaneMesh_eprha")

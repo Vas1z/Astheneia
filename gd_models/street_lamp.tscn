@@ -35,4 +35,5 @@ mesh = SubResource("BoxMesh_bhunq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9946673, 7.012143, 0)
 light_color = Color(1, 0.70980394, 0.30588236, 1)
 light_energy = 16.0
+shadow_enabled = true
 omni_range = 9.29839

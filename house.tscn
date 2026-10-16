@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nqntuxxo274n" path="res://resources/- Classic 64 Asset Pack 0.6/Concrete/Materials/concrete_05.png" id="3_6syyc"]
 [ext_resource type="Texture2D" uid="uid://cuj8fcg47mjgs" path="res://resources/- Classic 64 Asset Pack 0.6/Signs/Materials/sign_confined_space_01.png" id="3_k3v7f"]
 [ext_resource type="Texture2D" uid="uid://ddurtscdspeo4" path="res://resources/- Classic 64 Asset Pack 0.6/Windows/Materials/window_modern_06.jpg" id="3_o1325"]
-[ext_resource type="Texture2D" uid="uid://bcr55oi173lvx" path="res://- Classic 64 Asset Pack 0.6/Roof/Materials/shingles_wood_02.jpg" id="4_0l6dv"]
+[ext_resource type="Texture2D" uid="uid://bcr55oi173lvx" path="res://resources/- Classic 64 Asset Pack 0.6/Roof/Materials/shingles_wood_02.jpg" id="4_0l6dv"]
 [ext_resource type="PackedScene" uid="uid://jvjx5fdljyv2" path="res://gd_models/trash.tscn" id="7_2y50f"]
 [ext_resource type="Texture2D" uid="uid://byc6gugoh4dk0" path="res://resources/- Classic 64 Asset Pack 0.6/Walls/Materials/wall_stucco_01.jpg" id="7_q8yd6"]
 [ext_resource type="PackedScene" uid="uid://d2j7lae7jmj6" path="res://gd_models/bench.tscn" id="8_obbqb"]
@@ -64,6 +64,9 @@ albedo_texture = ExtResource("10_fl8vv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgaom"]
 albedo_texture = ExtResource("11_umavc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(70.0951, 11.07373, 35.112244)
 
 [node name="house" type="Node3D" unique_id=32828068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
@@ -763,3 +766,9 @@ mesh = SubResource("PlaneMesh_sn0t7")
 transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, 2.7715135, 0.6064317, 0.021589756)
 material_override = SubResource("StandardMaterial3D_cgaom")
 mesh = SubResource("PlaneMesh_sn0t7")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1521261740]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1021856601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0403938, 1.5812988, -17.476166)
+shape = SubResource("BoxShape3D_bhunq")
